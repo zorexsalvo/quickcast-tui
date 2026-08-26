@@ -1,4 +1,4 @@
-# Getting Started with Quickcast TUI
+# Getting Started with Quickcast
 
 ## Installation
 

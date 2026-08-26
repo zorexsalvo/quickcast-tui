@@ -1,4 +1,4 @@
-"""Main Quickcast TUI application."""
+"""Main Quickcast application."""
 
 import asyncio
 import subprocess

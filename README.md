@@ -1,4 +1,4 @@
-# Quickcast TUI
+# Quickcast
 
 A radial menu terminal UI for executing shell scripts ("spells") configured via TOML dotfile. Inspired by Baldur's Gate's quick spell menu.
 
@@ -14,7 +14,7 @@ A radial menu terminal UI for executing shell scripts ("spells") configured via 
 ## Installation
 
 ```bash
-pip install quickcast-tui
+pip install quickcast
 ```
 
 Or install from source:

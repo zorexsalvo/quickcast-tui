@@ -1,4 +1,4 @@
-"""Quickcast TUI - A radial menu terminal UI for executing shell scripts."""
+"""Quickcast - A radial menu terminal UI for executing shell scripts."""
 
 __version__ = "0.1.0"
 __author__ = "Quickcast Contributors"

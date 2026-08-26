@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "quickcast-tui"
+name = "quickcast"
 version = "0.1.0"
 description = "A radial menu TUI for executing shell scripts (spells) configured via TOML"
 readme = "README.md"
