@@ -1,0 +1,71 @@
+# Example Quickcast TUI Configuration
+# 
+# Copy this file to one of:
+# - ~/.quickcastrc
+# - ~/.config/quickcast/spells.toml
+#
+# Each spell is defined as [spell.unique_id] with:
+# - name: Display name (required)
+# - command: Shell command to execute (required)
+# - description: Optional description
+# - icon: Optional emoji icon (default: ✨)
+
+[spell.whoami]
+name = "Who Am I"
+command = "whoami"
+description = "Show current user"
+icon = "👤"
+
+[spell.pwd]
+name = "Current Directory"
+command = "pwd"
+description = "Print working directory"
+icon = "📁"
+
+[spell.ls]
+name = "List Files"
+command = "ls -lah"
+description = "List files with details"
+icon = "📋"
+
+[spell.date]
+name = "Date & Time"
+command = "date"
+description = "Show current date and time"
+icon = "🕐"
+
+[spell.uptime]
+name = "Uptime"
+command = "uptime"
+description = "Show system uptime"
+icon = "⏱️"
+
+[spell.df]
+name = "Disk Usage"
+command = "df -h"
+description = "Show disk space usage"
+icon = "💾"
+
+[spell.git_status]
+name = "Git Status"
+command = "git status"
+description = "Check git repository status"
+icon = "📊"
+
+[spell.git_log]
+name = "Git Log"
+command = "git log --oneline -10"
+description = "Show last 10 commits"
+icon = "📜"
+
+[spell.echo_test]
+name = "Echo Test"
+command = "echo 'Hello from Quickcast!' && sleep 1 && echo 'Done!'"
+description = "Test command with output"
+icon = "🔊"
+
+[spell.ps_list]
+name = "Process List"
+command = "ps aux | head -20"
+description = "Show running processes"
+icon = "⚙️"

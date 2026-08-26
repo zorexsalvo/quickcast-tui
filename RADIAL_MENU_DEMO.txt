@@ -1,0 +1,148 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                      BUTTON-BASED RADIAL MENU                          ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+The menu now uses actual Textual button widgets arranged in a grid,
+providing a much better UI experience than pure ASCII art.
+
+VISUAL LAYOUT
+════════════════════════════════════════════════════════════════════════
+
+    ┌─────────────────────────────────┐
+    │  ●  ●  ▲ (Selected)  ●  ●      │
+    │                                 │
+    │  ●  ●                ●  ●      │
+    │                                 │
+    │  ●  ●                ●  ●      │
+    │                                 │
+    │  ●  ●                ●  ●      │
+    │                                 │
+    │  ●  ●     (Center)     ●  ●      │
+    │                                 │
+    ├─────────────────────────────────┤
+    │ 🎯 Selected Spell — Description │
+    └─────────────────────────────────┘
+
+BUTTON FEATURES
+════════════════════════════════════════════════════════════════════════
+
+✓ Proper button widgets with Textual styling
+✓ Hover effects for visual feedback
+✓ Focus effects showing which button is selected
+✓ Buttons arranged in a 5×5 grid (center empty for symmetry)
+✓ Click-to-execute functionality
+✓ Keyboard navigation with arrow keys
+✓ WASD alternative controls
+✓ Selected spell information display below menu
+✓ Responsive to terminal resizing
+✓ Colored button variants (primary for selected, default for others)
+
+INTERACTION MODES
+════════════════════════════════════════════════════════════════════════
+
+MOUSE:
+  • Click any button to select and execute it
+  • Hover over buttons to see them highlight
+  • Visual feedback on all interactions
+
+KEYBOARD:
+  • Arrow keys (↑ ↓ ← →) — Navigate between spells
+  • WASD keys — Alternative navigation
+  • Enter/Space — Execute selected spell
+  • Q/ESC — Exit application
+
+VISUAL FEEDBACK
+════════════════════════════════════════════════════════════════════════
+
+  • Unselected buttons: Standard appearance
+  • Hovered buttons: 30% accent color highlight
+  • Selected buttons: Primary variant + 50% accent color
+  • Selected buttons: Blue border for focus indication
+  • Info bar: Shows selected spell name and description
+
+BUTTON GRID LAYOUT
+════════════════════════════════════════════════════════════════════════
+
+The buttons are arranged in a 5×5 grid with strategic spacing:
+
+    0   1   2   3   4
+  ┌───┬───┬───┬───┬───┐
+0 │ ● │ ● │ ● │ ● │ ● │
+  ├───┼───┼───┼───┼───┤
+1 │ ● │ ● │ ● │ ● │ ● │
+  ├───┼───┼───┼───┼───┤
+2 │ ● │ ● │   │ ● │ ● │  (center empty for symmetry)
+  ├───┼───┼───┼───┼───┤
+3 │ ● │ ● │ ● │ ● │ ● │
+  ├───┼───┼───┼───┼───┤
+4 │ ● │ ● │ ● │ ● │ ● │
+  └───┴───┴───┴───┴───┘
+
+This creates a radial appearance while leveraging proper button widgets.
+
+EXAMPLE SPELL DISPLAY
+════════════════════════════════════════════════════════════════════════
+
+Menu View:
+  ┌──────────────────────────────────────┐
+  │  👤  📁  🕐  📋  💾                   │
+  │                                      │
+  │  🌐  ⚙️        ⚡  🔥                │
+  │                                      │
+  │  📊        [CENTER]       🎯  💻     │
+  │                                      │
+  │  🔧  📝  🚀  🛠️  🔄                  │
+  │                                      │
+  │  💾  🎵  📞  ⌨️  🖱️                  │
+  ├──────────────────────────────────────┤
+  │ 🎯 Who Am I — Show current user      │
+  └──────────────────────────────────────┘
+
+When you navigate:
+  • Selected button changes to primary variant (highlighted)
+  • Info bar updates to show current spell details
+  • Keyboard/mouse navigation feels responsive
+  • All interactions provide clear visual feedback
+
+ADVANTAGES OVER ASCII ART
+════════════════════════════════════════════════════════════════════════
+
+✓ Real button widgets with proper event handling
+✓ Native Textual styling and theming support
+✓ Built-in hover and focus states
+✓ Better accessibility
+✓ Responsive to theme changes
+✓ Proper keyboard navigation built-in
+✓ Mouse clicks work natively without coordinate mapping
+✓ Consistent with other Textual applications
+✓ Easier to extend and customize
+✓ Better performance (no grid rendering)
+
+CUSTOMIZATION OPTIONS
+════════════════════════════════════════════════════════════════════════
+
+The button styling can be customized via CSS:
+
+  RadialMenu Button {
+    width: 100%;
+    height: 100%;
+    border: solid $accent;
+    background: $panel;
+  }
+
+  RadialMenu Button:hover {
+    background: $accent 30%;
+  }
+
+  RadialMenu Button:focus {
+    background: $accent 50%;
+    border: solid $primary;
+  }
+
+This provides theme integration and consistent visual appearance.
+
+════════════════════════════════════════════════════════════════════════
+
+The button-based approach provides a much better user experience
+while maintaining the "radial" aesthetic through the grid layout
+and visual arrangement of spells.
