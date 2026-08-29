@@ -70,7 +70,7 @@ over the ring when a spell runs.
                 ·     ║    ─────────     ║     ·
      ╭────────────╮   ║    List files    ║  ╭────────────╮
      │ Network    │···║                  ║··│ Disk Usage │
-     │            │   ║── Enter to cast ──║ │            │
+     │            │   ║─ Enter to cast ──║  │            │
      ╰────────────╯   ╚══════════════════╝  ╰────────────╯
                    ··      ··       ·      ··
                      ···  ·          ·  ···
