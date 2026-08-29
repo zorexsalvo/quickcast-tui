@@ -4,7 +4,7 @@ A radial menu terminal UI for executing shell scripts ("spells") configured via 
 
 ## Features
 
-- **Button-Based Radial Menu**: Interactive spell buttons arranged in a grid with proper Textual styling
+- **Radial Menu**: Interactive spell slots arranged in a ring around a central hub
 - **Mouse & Keyboard Navigation**: Click buttons or use arrow keys/WASD to navigate
 - **Real-time Output**: View command execution output in real-time
 - **TOML Configuration**: Define spells in `~/.quickcastrc` or `~/.config/quickcast/spells.toml`
@@ -51,28 +51,47 @@ Navigate the menu with your mouse or arrow keys, click/press Enter to execute a 
 
 ## User Interface
 
-The menu uses interactive Textual button widgets arranged in a 5×5 grid:
+Spells are drawn as a **radial ring** around a central hub, inspired by Baldur's
+Gate's quick spell menu. Each slot shows the spell's emoji icon and name; the hub
+shows the currently selected spell with a cast hint. An output overlay floats
+over the ring when a spell runs.
 
 ```
-┌────────────────────────────┐
-│  👤  📁  🕐  📋  💾       │
-│  🌐  ⚙️        ⚡  🔥     │
-│  📊        [CENTER]  🎯  💻│
-│  🔧  📝  🚀  🛠️  🔄       │
-│  💾  🎵  📞  ⌨️  🖱️       │
-├────────────────────────────┤
-│ 🎯 Who Am I — Show user    │
-└────────────────────────────┘
+                         ╔════════════╗
+                         ║ List Files ║
+                         ║            ║
+         ╭────────────╮  ╚════════════╝ ╭────────────╮
+         │ Memory     │·················│ Who Am I   │
+         │            │·        ·       │            │
+         ╰────────────╯         ·       ╰────────────╯
+                 ·· ···         ·        ··· ··
+                ··    ╔══════════════════╗    ··
+                ·     ║     List Files   ║     ·
+                ·     ║    ─────────     ║     ·
+     ╭────────────╮   ║    List files    ║  ╭────────────╮
+     │ Network    │···║                  ║··│ Disk Usage │
+     │            │   ║── Enter to cast ──║ │            │
+     ╰────────────╯   ╚══════════════════╝  ╰────────────╯
+                   ··      ··       ·      ··
+                     ···  ·          ·  ···
+                ╭────────────╮···╭────────────╮
+                │ Git Status │  ·│ CPU Load   │
+                │            │   │            │
+                ╰────────────╯   ╰────────────╯
+
+                    ↑↓ navigate   Enter cast
 ```
 
 **Features:**
-- Spell buttons with emoji icons and names
-- Click any button to select and execute
-- Hover effects for visual feedback
-- Selected button shows with primary styling
-- Information panel shows current selection
-- Keyboard navigation with arrow keys/WASD
-- Theme support with responsive colors
+- Spell slots arranged in a ring around a central hub
+- Each slot shows an emoji icon and its word-wrapped name
+- A dotted ring and spokes connect the ring to the hub
+- The active slot is highlighted with a gold double-line border
+- The hub shows the selected spell's icon, name, description, and cast hint
+- Up to 8 spells per page — browse pages with `[` / `]`
+- Output overlay appears over the ring while a spell runs
+- Click a slot or navigate with arrow keys/WASD to select
+- Theme colors adapt to the terminal
 
 For more details, see [RADIAL_MENU_DEMO.txt](https://github.com/zorexsalvo/quickcast-tui/blob/main/RADIAL_MENU_DEMO.txt).
 
@@ -146,7 +165,7 @@ ruff check src/
 - `config.py` - Configuration loading and parsing
 - `spell.py` - Spell data model
 - `executor.py` - Command execution with subprocess
-- `widgets/radial_menu.py` - Radial menu widget with buttons
+- `widgets/radial_menu.py` - Radial ring menu widget
 - `widgets/output.py` - Output display widget
 - `app.py` - Main application
 
